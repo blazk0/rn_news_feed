@@ -1,19 +1,28 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import NewsList from '@pages/NewsFeed/NewsList';
-import NewsDetails from '@pages/NewsFeed/NewsDetails';
+import HomeStack from './HomeStack';
+import Settings from '@pages/Settings/Settings';
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const AppContainer = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="NewsList" component={NewsList} />
-        <Stack.Screen name="NewsDetails" component={NewsDetails} />
-      </Stack.Navigator>
+      <Tab.Navigator
+        screenOptions={{
+          tabBarIconStyle: { display: 'none' },
+        }}>
+        <Tab.Screen
+          name="Home"
+          component={HomeStack}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Tab.Screen name="Settings" component={Settings} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };
