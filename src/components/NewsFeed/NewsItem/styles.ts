@@ -18,6 +18,7 @@ export default StyleSheet.create({
     flexShrink: 1,
   },
   title: {
+    textAlign: 'left',
     fontWeight: '500',
     textDecorationLine: 'underline',
   },

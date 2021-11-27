@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, FlatList } from 'react-native';
+import { FlatList } from 'react-native';
 import Fuse from 'fuse.js';
 
 import styles from './NewsList.styles';
@@ -8,6 +8,7 @@ import { useGetNews } from '@hooks/queries/news';
 import { Props } from './Props';
 import NewsItem from '@components/NewsFeed/NewsItem';
 import Input from '@components/common/Input';
+import Container from '@components/common/Container';
 
 const NewsList = ({}: Props) => {
   const [text, setText] = useState('');
@@ -33,7 +34,7 @@ const NewsList = ({}: Props) => {
   };
 
   return (
-    <View style={styles.container}>
+    <Container noPadding>
       <FlatList
         data={getFilteredNews()}
         onRefresh={refetch}
@@ -46,7 +47,7 @@ const NewsList = ({}: Props) => {
           <Input placeholder="Search News ..." onChangeText={setText} />
         }
       />
-    </View>
+    </Container>
   );
 };
 
