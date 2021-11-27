@@ -16,6 +16,7 @@ const NewsItem = ({ news }: Props) => {
       )}
 
       <TouchableOpacity
+        hitSlop={{ bottom: -100 }}
         style={styles.titleContainer}
         onPress={() => navigation.navigate('NewsDetails', { news })}>
         <Text style={styles.title}>{news.title}</Text>
