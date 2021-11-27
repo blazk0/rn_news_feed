@@ -66,7 +66,8 @@
       "@interfaces/*": ["src/interfaces/*"],
       "@navigation/*": ["src/navigation/*"],
       "@pages/*": ["src/pages/*"],
-      "@services/*": ["src/services/*"]
+      "@services/*": ["src/services/*"],
+      "@utils/*": ["src/utils/*"]
     }
   },
   "exclude": [
