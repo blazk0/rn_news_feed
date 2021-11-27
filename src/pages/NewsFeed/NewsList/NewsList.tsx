@@ -8,7 +8,7 @@ import { Props } from './Props';
 import NewsItem from '@components/NewsFeed/NewsItem';
 
 const NewsList = ({}: Props) => {
-  const { data, isLoading } = useGetNews();
+  const { data, isLoading, isRefetching, refetch } = useGetNews();
 
   if (isLoading) {
     return <Loading />;
@@ -18,6 +18,8 @@ const NewsList = ({}: Props) => {
     <View style={styles.container}>
       <FlatList
         data={data?.results}
+        onRefresh={refetch}
+        refreshing={isRefetching}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.listContainer}
         keyExtractor={item => item.title}
