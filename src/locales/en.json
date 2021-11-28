@@ -1,0 +1,17 @@
+{
+  "langs": {
+    "en": "English",
+    "ar": "Arabic"
+  },
+  "bottomTab": {
+    "home": "Home",
+    "settings": "Settings"
+  },
+  "newsList": {
+    "headerTitle": "News List",
+    "searchNews": "Search News ..."
+  },
+  "newsDetails": {
+    "headerTitle": "News Details"
+  }
+}

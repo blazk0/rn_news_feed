@@ -33,7 +33,9 @@ const NewsDetails = ({ route }: Props) => {
         )}
 
         {!!news.pubDate && (
-          <Text>{dayjs(news.pubDate).format('DD/MM/YYYY')}</Text>
+          <Text style={styles.text}>
+            {dayjs(news.pubDate).format('DD/MM/YYYY')}
+          </Text>
         )}
       </View>
     </Container>

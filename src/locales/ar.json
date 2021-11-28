@@ -1,0 +1,17 @@
+{
+  "langs": {
+    "en": "الانجليزية",
+    "ar": "العربية"
+  },
+  "bottomTab": {
+    "home": "الرئيسية",
+    "settings": "الإعدادات"
+  },
+  "newsList": {
+    "headerTitle": "الأنباء",
+    "searchNews": "البحث ..."
+  },
+  "newsDetails": {
+    "headerTitle": "التفاصيل"
+  }
+}

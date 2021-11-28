@@ -11,6 +11,7 @@ module.exports = {
           '@helpers': './src/helpers',
           '@hooks': './src/hooks',
           '@interfaces': './src/interfaces',
+          '@locales': './src/locales',
           '@navigation': './src/navigation',
           '@pages': './src/pages',
           '@services': './src/services',

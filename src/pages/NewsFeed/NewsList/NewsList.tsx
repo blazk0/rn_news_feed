@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FlatList } from 'react-native';
 import Fuse from 'fuse.js';
+import { useTranslation } from 'react-i18next';
 
 import styles from './NewsList.styles';
 import Loading from '@components/common/Loading';
@@ -12,6 +13,7 @@ import Container from '@components/common/Container';
 
 const NewsList = ({}: Props) => {
   const [text, setText] = useState('');
+  const { t } = useTranslation();
   const { data, isLoading, isRefetching, refetch } = useGetNews();
 
   if (isLoading) {
@@ -44,7 +46,10 @@ const NewsList = ({}: Props) => {
         keyExtractor={item => item.title}
         renderItem={({ item }) => <NewsItem news={item} />}
         ListHeaderComponent={
-          <Input placeholder="Search News ..." onChangeText={setText} />
+          <Input
+            placeholder={t('newsList.searchNews')}
+            onChangeText={setText}
+          />
         }
       />
     </Container>
