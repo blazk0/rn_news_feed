@@ -12,6 +12,7 @@ import { useAppLanguage } from '@hooks/utils/useAppLanguage';
 import { darkTheme, lightTheme } from '@utils/themeConfig';
 import { themeAtom } from '@store/theme';
 import Text from '@components/common/Text';
+import linking from './deepLinkingConfig';
 
 const Tab = createBottomTabNavigator();
 
@@ -31,10 +32,14 @@ const AppContainer = () => {
   };
 
   return (
-    <NavigationContainer theme={theme === 'light' ? lightTheme : darkTheme}>
+    <NavigationContainer
+      linking={linking}
+      fallback={<Text>Loading...</Text>}
+      theme={theme === 'light' ? lightTheme : darkTheme}>
       <Tab.Navigator
         screenOptions={{
           tabBarIconStyle: { display: 'none' },
+          tabBarHideOnKeyboard: true,
         }}>
         <Tab.Screen
           name="Home"

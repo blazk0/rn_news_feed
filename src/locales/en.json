@@ -12,7 +12,8 @@
     "searchNews": "Search News ..."
   },
   "newsDetails": {
-    "headerTitle": "News Details"
+    "headerTitle": "News Details",
+    "goBack": "Go Back to New List"
   },
   "settings": {
     "darkMode": "Dark Mode"

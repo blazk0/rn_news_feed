@@ -12,7 +12,8 @@
     "searchNews": "البحث ..."
   },
   "newsDetails": {
-    "headerTitle": "التفاصيل"
+    "headerTitle": "التفاصيل",
+    "goBack": "الرجوع الي الأنباء"
   },
   "settings": {
     "darkMode": "النظام الليلي"

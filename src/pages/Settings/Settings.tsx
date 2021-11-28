@@ -15,6 +15,7 @@ const Settings = () => {
       themeToChange === 'dark' ? 'light-content' : 'dark-content';
 
     StatusBar.setBarStyle(statusBar);
+    StatusBar.setBackgroundColor(themeToChange === 'light' ? 'white' : 'black');
     setTheme(themeToChange);
   };
 

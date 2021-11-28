@@ -1,18 +1,33 @@
 import React from 'react';
-import { View, Image, TouchableOpacity, Linking } from 'react-native';
+import { View, Image, TouchableOpacity, Linking, Button } from 'react-native';
 import dayjs from 'dayjs';
 
 import Container from '@components/common/Container';
 import styles from './NewsDetails.styles';
 import { Props } from './Props';
 import Text from '@components/common/Text';
+import { useTranslation } from 'react-i18next';
 
-const NewsDetails = ({ route }: Props) => {
-  const { news } = route.params;
+const NewsDetails = ({ route, navigation }: Props) => {
+  // news api doesn't offer any way of getting news by id unfortuntely
+  // will be empty screen when navigating by deep linking
+  const { t } = useTranslation();
+  const news = route.params.news;
 
   const openUrl = () => {
     Linking.openURL(news.link);
   };
+
+  if (news === 'news') {
+    return (
+      <View style={styles.center}>
+        <Button
+          title={t('newsDetails.goBack')}
+          onPress={() => navigation.replace('NewsList')}
+        />
+      </View>
+    );
+  }
 
   return (
     <Container scrollEnabled noPadding>
