@@ -10,18 +10,17 @@ const NewsItem = ({ news }: Props) => {
   const navigation = useNavigation<NavigationProp<ParamTypes>>();
 
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => navigation.navigate('NewsDetails', { news })}>
       {!!news.image_url && news.image_url.startsWith('https') && (
         <Image style={styles.img} source={{ uri: news.image_url }} />
       )}
 
-      <TouchableOpacity
-        hitSlop={{ bottom: -100 }}
-        style={styles.titleContainer}
-        onPress={() => navigation.navigate('NewsDetails', { news })}>
+      <View style={styles.titleContainer}>
         <Text style={styles.title}>{news.title}</Text>
-      </TouchableOpacity>
-    </View>
+      </View>
+    </TouchableOpacity>
   );
 };
 

@@ -26,6 +26,7 @@ export const useAppLanguage = (detectLang = true) => {
 
     await AsyncStorage.setItem('lang', selectedLang);
     I18nManager.forceRTL(selectedLang === 'ar');
+    I18nManager.allowRTL(selectedLang === 'ar');
     RnRestart.Restart();
   };
 
