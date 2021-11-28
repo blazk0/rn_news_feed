@@ -3,6 +3,9 @@
     "en": "English",
     "ar": "Arabic"
   },
+  "common": {
+    "apiError": "An Error has occured"
+  },
   "bottomTab": {
     "home": "Home",
     "settings": "Settings"

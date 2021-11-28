@@ -23,7 +23,7 @@ const NewsDetails = ({ route, navigation }: Props) => {
       <View style={styles.center}>
         <Button
           title={t('newsDetails.goBack')}
-          onPress={() => navigation.replace('NewsList')}
+          onPress={() => navigation.navigate('NewsList')}
         />
       </View>
     );
