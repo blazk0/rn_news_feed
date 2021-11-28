@@ -1,18 +1,23 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useTranslation } from 'react-i18next';
+import { useAtom } from 'jotai';
 
 import styles from './styles';
 import HomeStack from './HomeStack';
-import Settings from '@pages/Settings/Settings';
+import Settings from '@pages/Settings';
 import { useAppLanguage } from '@hooks/utils/useAppLanguage';
+import { darkTheme, lightTheme } from '@utils/themeConfig';
+import { themeAtom } from '@store/theme';
+import Text from '@components/common/Text';
 
 const Tab = createBottomTabNavigator();
 
 const AppContainer = () => {
   const { t, i18n } = useTranslation();
+  const [theme] = useAtom(themeAtom);
   const { changeAppLanguage } = useAppLanguage(false);
 
   const renderRightHeader = () => {
@@ -26,7 +31,7 @@ const AppContainer = () => {
   };
 
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={theme === 'light' ? lightTheme : darkTheme}>
       <Tab.Navigator
         screenOptions={{
           tabBarIconStyle: { display: 'none' },

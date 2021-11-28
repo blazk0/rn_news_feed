@@ -1,5 +1,6 @@
 import React from 'react';
 import { QueryClientProvider } from 'react-query';
+import { Provider } from 'jotai';
 
 import AppContainer from '@navigation/AppContainer';
 import { queryClient } from '@utils/queryConfig';
@@ -9,9 +10,11 @@ const App = () => {
   useAppLanguage();
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <AppContainer />
-    </QueryClientProvider>
+    <Provider>
+      <QueryClientProvider client={queryClient}>
+        <AppContainer />
+      </QueryClientProvider>
+    </Provider>
   );
 };
 

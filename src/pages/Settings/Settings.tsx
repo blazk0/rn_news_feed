@@ -1,11 +1,31 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { useAtom } from 'jotai';
+import { StatusBar } from 'react-native';
+
+import Container from '@components/common/Container';
+import Switch from '@components/common/Switch';
+import { themeAtom } from '@store/theme';
 
 const Settings = () => {
+  const [theme, setTheme] = useAtom(themeAtom);
+
+  const changeTheme = () => {
+    const themeToChange = theme === 'light' ? 'dark' : 'light';
+    const statusBar =
+      themeToChange === 'dark' ? 'light-content' : 'dark-content';
+
+    StatusBar.setBarStyle(statusBar);
+    setTheme(themeToChange);
+  };
+
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Setting Screen</Text>
-    </View>
+    <Container>
+      <Switch
+        label="settings.darkMode"
+        value={theme !== 'light'}
+        onChange={changeTheme}
+      />
+    </Container>
   );
 };
 

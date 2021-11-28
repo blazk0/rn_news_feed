@@ -13,5 +13,8 @@
   },
   "newsDetails": {
     "headerTitle": "التفاصيل"
+  },
+  "settings": {
+    "darkMode": "النظام الليلي"
   }
 }

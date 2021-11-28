@@ -10,6 +10,7 @@ import { Props } from './Props';
 import NewsItem from '@components/NewsFeed/NewsItem';
 import Input from '@components/common/Input';
 import Container from '@components/common/Container';
+import RefreshControl from '@components/common/RefreshControl';
 
 const NewsList = ({}: Props) => {
   const [text, setText] = useState('');
@@ -41,9 +42,10 @@ const NewsList = ({}: Props) => {
         data={getFilteredNews()}
         onRefresh={refetch}
         refreshing={isRefetching}
+        refreshControl={<RefreshControl refreshing={isRefetching} />}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.listContainer}
-        keyExtractor={item => item.title}
+        keyExtractor={(item, idx) => idx.toString()}
         renderItem={({ item }) => <NewsItem news={item} />}
         ListHeaderComponent={
           <Input

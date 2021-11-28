@@ -13,5 +13,8 @@
   },
   "newsDetails": {
     "headerTitle": "News Details"
+  },
+  "settings": {
+    "darkMode": "Dark Mode"
   }
 }

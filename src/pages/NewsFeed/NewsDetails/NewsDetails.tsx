@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, Linking } from 'react-native';
+import { View, Image, TouchableOpacity, Linking } from 'react-native';
 import dayjs from 'dayjs';
 
 import Container from '@components/common/Container';
 import styles from './NewsDetails.styles';
 import { Props } from './Props';
+import Text from '@components/common/Text';
 
 const NewsDetails = ({ route }: Props) => {
   const { news } = route.params;
