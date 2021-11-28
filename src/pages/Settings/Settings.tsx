@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAtom } from 'jotai';
-import { StatusBar } from 'react-native';
+import { Platform, StatusBar } from 'react-native';
 
 import Container from '@components/common/Container';
 import Switch from '@components/common/Switch';
@@ -15,7 +15,12 @@ const Settings = () => {
       themeToChange === 'dark' ? 'light-content' : 'dark-content';
 
     StatusBar.setBarStyle(statusBar);
-    StatusBar.setBackgroundColor(themeToChange === 'light' ? 'white' : 'black');
+
+    if (Platform.OS === 'android') {
+      StatusBar.setBackgroundColor(
+        themeToChange === 'light' ? 'white' : 'black',
+      );
+    }
     setTheme(themeToChange);
   };
 
